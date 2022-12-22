@@ -1,8 +1,9 @@
+/* Write a function that receives two parameters, a and b and 
+returns the sum of them within an h2 tag. */
 
 
-
-function HelloWord(nome){
-    return console.log(<h1> Hello {nome}</h1>)
+function Sum(a,b){
+    return <h1> the sum is  {a + b}</h1>
 }
 
-HelloWord("Yari")
+Sum(1,2)
