@@ -1,5 +1,8 @@
-import React from "react"
 
-const hello = <h1> Hello word!</h1>
 
-console.log(hello)
+
+function HelloWord(nome){
+    return console.log(<h1> Hello {nome}</h1>)
+}
+
+HelloWord("Yari")
