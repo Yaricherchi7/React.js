@@ -5,7 +5,7 @@ export class HelloWord extends React.Component {
         return (
             <div>
               <h1>Hello Word!</h1>
-              <p>What a beautiful day!</p>
+              <p>What a beautiful day!</p> 
             </div>
           );
     }
