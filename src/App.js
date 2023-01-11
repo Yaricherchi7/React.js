@@ -1,5 +1,6 @@
 import React from "react";
-import { Counter } from "./Counter";
+import { ClickCounter } from "./ClickCounter";
+
 import { HelloWord } from "./HelloWord";
 import { Welcome } from "./Welcome";
 
@@ -9,7 +10,7 @@ export class App extends React.Component {
         return <div> 
             <HelloWord/>
             <Welcome name="Jhon" age="64" />
-            <Counter initialValue={0} interval={1000} increment={1}/>
+            <ClickCounter click={0}  incrementBy={1}/>
         </div>
     }
 }
