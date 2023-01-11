@@ -2,6 +2,7 @@ import React from "react";
 import { ClickCounter } from "./ClickCounter";
 
 import { HelloWord } from "./HelloWord";
+import { InteractiveWelcome } from "./InteractiveWelcome";
 import { Welcome } from "./Welcome";
 
 
@@ -11,6 +12,7 @@ export class App extends React.Component {
             <HelloWord/>
             <Welcome name="Jhon" age="64" />
             <ClickCounter click={0}  incrementBy={1}/>
+            <InteractiveWelcome/>
         </div>
     }
 }
