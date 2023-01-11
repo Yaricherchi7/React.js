@@ -1,25 +1,21 @@
 import React from "react";
 
 export class ClickCounter extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      counter: this.props.click,
-    };
-  }
-
-  handleCounter = ()=> {
-    this.setState((state)=>{
-        return {
-            counter : state.counter + this.props.incrementBy,
-        }
-    })
+ 
+  
+  handleCounter = (e)=> {
+    const titolo = document.querySelector("#h1")
+    titolo.textContent = e.target.textContent
+    
   }
 
   render(){
     return <div>
-        <h3> Count : {this.state.counter}</h3>
-        <button onClick={this.handleCounter}> add +1 at counter</button>
+        <h1 id="h1">testo</h1>
+        <button  onClick={this.handleCounter}> primo</button>
+        <button  onClick={this.handleCounter}> secondo</button>
+        <button  onClick={this.handleCounter}> terzo</button>
+
     </div>
   }
 
