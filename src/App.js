@@ -3,16 +3,21 @@ import { ClickCounter } from "./ClickCounter";
 
 import { HelloWord } from "./HelloWord";
 import { InteractiveWelcome } from "./InteractiveWelcome";
+import { Login } from "./Login";
 import { Welcome } from "./Welcome";
 
 
 export class App extends React.Component {
     render(){
-        return <div> 
+        return (
+        <div> 
             <HelloWord/>
-            <Welcome name="Jhon" age="64" />
+            <Welcome name="Jhon" age="22" />
             <ClickCounter click={0}  incrementBy={1}/>
             <InteractiveWelcome/>
+            <h1> My First from</h1>
+            <Login/>
         </div>
+        )
     }
 }
