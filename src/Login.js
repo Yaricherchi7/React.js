@@ -4,8 +4,8 @@ export class Login extends React.Component {
   state = {
     username: "",
     password: "",
-    checkbox: "",
-    onLogin: "false"
+    checkbox: "unchecked",
+   
   };
 
   HandlerInputchange = (event) => {
@@ -20,13 +20,22 @@ export class Login extends React.Component {
         });
     }
 
-    HandlerClick = ()=> {
-        this.setState({
-            onLogin : true,
-        })
+    onLogin = ()=> {
+        console.log(this.state)
     }
+
+
     componentDidUpdate(){
         console.log(this.state)
+    }
+
+    HandleReset = ()=> {
+        this.setState({
+            username : "",
+            password: "",
+            checkbox: "uncheked",
+            onLogin: "false"
+        })
     }
   
 
@@ -50,14 +59,21 @@ export class Login extends React.Component {
             <input
             name="checkbox"
             type="checkbox"
-            value={this.state.password}
-            onChange={this.HandlerInputchange}
+            value={this.state.username}
+            checked={this.state.checkbox}
+            onClick={this.HandlerInputchange}
             />
             <button 
             disabled={!this.state.username || !this.state.password}
             onClick={this.HandlerClick}
             >
             Bottone
+            </button>
+            <button
+            type="reset"
+            onClick={this.HandleReset}
+            >
+                reset
             </button>
         </div>
         );
