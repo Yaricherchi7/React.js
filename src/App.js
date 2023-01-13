@@ -4,6 +4,7 @@ import { ClickCounter } from "./ClickCounter";
 import { HelloWord } from "./HelloWord";
 import { InteractiveWelcome } from "./InteractiveWelcome";
 import { Login } from "./Login";
+import { UncontrolledLogin } from "./UncontrolledLogin";
 import { Welcome } from "./Welcome";
 
 
@@ -16,7 +17,7 @@ export class App extends React.Component {
             <ClickCounter click={0}  incrementBy={1}/>
             <InteractiveWelcome/>
             <h1> My First from</h1>
-            <Login/>
+            <UncontrolledLogin/>
         </div>
         )
     }
