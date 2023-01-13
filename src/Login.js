@@ -4,8 +4,9 @@ export class Login extends React.Component {
   state = {
     username: "",
     password: "",
-    checkbox: "",
-    onLogin: "false"
+    checkbox: false,
+    buttonDisabled: true,
+    
   };
 
   HandlerInputchange = (event) => {
@@ -14,53 +15,69 @@ export class Login extends React.Component {
     const type = event.target.type;
     const checked = event.target.checked;
 
-        this.setState({
-        [name]: type === "checkbox" ? checked : value,
-        
-        });
-    }
+    this.setState({
+      [name]: type === "checkbox" ? checked : value,
+      [checked]: true,
+      buttonDisabled: this.state.username && this.state.password ? false : true 
+    });
+  };
 
-    HandlerClick = ()=> {
-        this.setState({
-            onLogin : true,
-        })
-    }
-    componentDidUpdate(){
-        console.log(this.state)
-    }
-  
+  onLogin = () => {
+    console.log(this.state);
+  };
+
+  removeFields = ()=>{
+    this.setState({
+    username: "",
+    password: "",
+    checkbox: false,
+    buttonDisabled: true,
+    })
+  }
 
   render() {
-        return (
-        <div>
-            <input
+    return (
+      <div>
+        <form>
+          <input
             name="username"
-            type="username"
+            type="text"
             value={this.state.value}
             onChange={this.HandlerInputchange}
-            />
+          />
 
-            <input
+          <input
             name="password"
             type="password"
             value={this.state.password}
             onChange={this.HandlerInputchange}
-            />
+          />
 
-            <input
+          <input
             name="checkbox"
             type="checkbox"
-            value={this.state.password}
+            value={this.state.username}
+            checked={this.state.checkbox}
             onChange={this.HandlerInputchange}
-            />
-            <button 
-            disabled={!this.state.username || !this.state.password}
-            onClick={this.HandlerClick}
-            >
-            Bottone
-            </button>
-        </div>
-        );
-    }
+          />
+          <button
+          name="button"
+            disabled={this.state.buttonDisabled}
+            onClick={this.onLogin}
+          >
+            login
+          </button>
+          <button
+          name="button"
+          type="remove"
+          onClick={this.removeFields}
+          >
+            Reset
+          </button>
+        </form>
+      </div>
+    );
+  }
 }
+
 
