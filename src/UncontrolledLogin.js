@@ -2,6 +2,7 @@ import React,{createRef} from "react";
 
 export class UncontrolledLogin extends React.Component {
 
+    _onForm = createRef()
     
 
     handlerFormSubmit=(event)=>{
@@ -15,15 +16,18 @@ export class UncontrolledLogin extends React.Component {
         console.log({username,password,remember,submit})
 
     }
-
+    
+    componentDidMount(){
+        this._onForm.current.elements.username.focus();
+    }
 
     render(){
         return (
             <div>
                 <h3> My uncontrolled Form Component</h3>
 
-                <form onSubmit={this.handlerFormSubmit}>
-                    <input name="username"/>
+                <form ref={this._onForm} onSubmit={this.handlerFormSubmit}>
+                    <input name="username" type="text" />
                     <input name="password" type="password"/>
                     <input name="remember"type="checkbox" />
                     <button name="submit" type="submit"> Login</button>
