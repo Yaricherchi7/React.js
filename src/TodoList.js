@@ -1,28 +1,33 @@
 import React from "react";
 
 export class TodoList extends React.Component {
-  state = {
-    items: [
-      "Html",
-      "Css",
-      "Javascript",
-      "React",
-      "Git",
-      "Typescript",
-      "Node.js",
-      "Tailwind CSS",
-    ],
-  };
+  constructor(props){
+    super(props)
+    this.state = {
+        items: [
+          "Html",
+          "Css",
+          "Javascript",
+          "React",
+          "Git",
+          "Typescript",
+          "Node.js",
+          "Tailwind CSS",
+        ],
+        value : ""
+      };
+  }
+
 
   SaveInputs = (event)=> {
     this.setState({
-        input : event.target.value
+        value: event.target.value
     })
   }
-  AddItems = () => {
-    let { items, input } = this.state;
-    items.push(input)
-    this.setState({items : items})
+  AddItems = (event) => {
+    event.preventDefault()
+    this.setState({items : [...this.state.items, this.state.value]})
+    
   };
 
   render() {
@@ -34,7 +39,7 @@ export class TodoList extends React.Component {
           ))}
         </ul>
         
-          <input name="text" type="text" onChange={this.SaveInputs}/>
+          <input name="input" type="text" value={this.state.value} onChange={this.SaveInputs}/>
           <button name="submit" onClick={this.AddItems}>
             Add
           </button>
@@ -43,9 +48,3 @@ export class TodoList extends React.Component {
   }
 }
 
-/* Create a TodoList component that renders a ul tag
- with a li tag for each item contained in the items state variable.
- The items state variable should be an array of strings.
- The TodoList component should also contain an input tag and a button.
- When the button is clicked, the event handler should add
- the value of the input tag to the items array. */
