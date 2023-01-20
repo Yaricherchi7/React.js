@@ -10,7 +10,7 @@ export class App extends React.Component {
     render(){
         return (
         <div> 
-            <Container children={<Welcome name="Yari" age="27"/>}>
+            <Container title="today is a good day!" children={<Welcome name="Yari" age="27"/>} >
             </Container>  
         </div>
         )
