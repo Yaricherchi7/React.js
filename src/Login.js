@@ -43,9 +43,9 @@ export class Login extends React.Component {
     }
 
     return (
-      <div>
-        <form>
-          <input
+      <div className="p-10 m-5 text-center text-color-black">
+        <form className="gap-5">
+          <input className=" border-black border-3 px-3"
             name="username"
             type="text"
             value={this.state.value}
@@ -74,7 +74,7 @@ export class Login extends React.Component {
           >
             login
           </button>
-          <button
+          <button className="border-2 bg-blue-500 hover:bg-blue-700 text-white "
           name="button"
           type="remove"
           onClick={this.removeFields}
