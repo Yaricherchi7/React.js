@@ -45,14 +45,14 @@ export class Login extends React.Component {
     return (
       <div>
         <form>
-          <input
+          <input className="border-2 border-slate-500 m-2"
             name="username"
             type="text"
             value={this.state.value}
             onChange={this.HandlerInputchange}
           />
 
-          <input 
+          <input className="border-2 border-slate-500 m-2"
             name="password"
             type="password"
             value={this.state.password}
@@ -66,7 +66,7 @@ export class Login extends React.Component {
             checked={this.state.checkbox}
             onChange={this.HandlerInputchange}
           />
-          <button 
+          <button className="mx-2 py-1 px-2 rounded"
           style={PasswordStyle}
           name="button"
             disabled={this.state.buttonDisabled}
@@ -74,7 +74,7 @@ export class Login extends React.Component {
           >
             login
           </button>
-          <button
+          <button className=" mx-2 py-1 px-2 bg-slate-900 text-white rounded"
           name="button"
           type="remove"
           onClick={this.removeFields}
