@@ -31,7 +31,12 @@ export class TodoList extends React.Component {
   };
 
   resetItems = ()=> {
-    this.setState({items : []})
+    this.setState({items : [""]})
+  }
+
+  removeItem = (event)=>{
+    event.preventDefault()
+    event.target.parentElement.remove()
   }
 
   render() {
@@ -39,7 +44,7 @@ export class TodoList extends React.Component {
       <div>
         <ul>
           {this.state.items.map((items, index) => (
-            <li key={items + index}>{items}</li>
+            <li key={items + index}>{items}<button name="remItems" onClick={this.removeItem}>remove</button></li>
           ))}
         </ul>
         
