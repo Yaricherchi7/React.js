@@ -5,10 +5,10 @@ import { Age } from "./Age";
 
 export class Welcome extends React.Component {
     render(){
-        return <div>
+        return(
+         <div className="welcome">
         <p> Welcome {this.props.name}!</p>
          <Age age="16"/>
-         
         </div>
-    }
+    )}
 }
