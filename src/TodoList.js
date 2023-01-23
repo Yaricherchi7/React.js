@@ -1,9 +1,9 @@
 import React from "react";
 
 export class TodoList extends React.Component {
-  constructor(props){
-    super(props)
-    this.state = {
+  
+    
+    state = {
         items: [
           "Html",
           "Css",
@@ -16,7 +16,12 @@ export class TodoList extends React.Component {
         ],
         value : ""
       };
-  }
+    
+  getList = () => {
+    return  this.state.items.map((items, index) => (
+        <li key={items + index}>{items}<button name="remItems" onClick={this.removeItem}>remove</button></li>
+      ));
+    };
 
 
   SaveInputs = (event)=> {
@@ -41,13 +46,11 @@ export class TodoList extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="">
+        <h1>List</h1>
         <ul>
-          {this.state.items.map((items, index) => (
-            <li key={items + index}>{items}<button name="remItems" onClick={this.removeItem}>remove</button></li>
-          ))}
+          {this.getList(this.state.items, this.removeItem)}
         </ul>
-        
           <input name="input" type="text" value={this.state.value} onChange={this.SaveInputs}/>
           <button name="submit" onClick={this.AddItems}>
             Add
