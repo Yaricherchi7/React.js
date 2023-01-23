@@ -1,24 +1,36 @@
 import React from "react";
 import { Container } from "./Container";
-import { Welcome } from "./Welcome";
-import {Login} from "./Login";
-import { TodoList } from "./TodoList";
-
-
-
-
-
+import { LanguageContext } from "./LanguageContext";
+import { DisplayLanguage } from "./DisplayLanguage";
 
 export class App extends React.Component {
-    render(){
-        return (
-        <div> 
-            <Container title="today is a good day!">
-            <Welcome name="Yari" age="27"/>
-            <Login/>
-            <TodoList/>
-            </Container>  
-        </div>
-        )
-    }
+  state = {
+    language: 'en'
+  };
+
+  handleChangeLanguage = (event) => {
+    this.setState({
+      language : event.target.value
+    });
+  };
+
+  render() {
+    return (
+      <div className="border-2 p-5">
+        <select className="m-5"
+          value={this.state.language}
+          onChange={this.handleChangeLanguage}
+        >
+          <option value='en'>English</option>
+          <option value='it'>Italiano</option>
+        </select>
+
+          <LanguageContext.Provider value={this.state.language}>
+          <Container>
+            <DisplayLanguage />
+          </Container>
+        </LanguageContext.Provider> 
+      </div>
+    );
+  }
 }
