@@ -17,9 +17,9 @@ export function HookLogin(){
 
     return(
         <div>
-            <form onChange={handlerInputChange}>
-                <input value={data.username} type="username" name="username"></input>
-                <input value={data.password} type="password" name="password"></input>
+            <form onChange={handlerInputChange} className="bg-gray-400 p-5" >
+                <input className="mx-2" value={data.username} type="username" name="username"></input>
+                <input className="mx-2" value={data.password} type="password" name="password"></input>
                 <input value={data.remember} type="checkbox" name="remember"></input>
             </form>
         </div>
