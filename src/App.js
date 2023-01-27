@@ -1,7 +1,5 @@
 import React from "react";
-import { HookCounter } from "./HookCounter";
-import { HookLogin } from "./HookLogin";
-import { Sum } from "./Sum";
+import { Counter } from "./Counter";
 import { Welcome } from "./Welcome";
 
 export class App extends React.Component {
@@ -10,10 +8,7 @@ export class App extends React.Component {
     return (
       <div >
         <Welcome name="Yari"/>
-        <Sum/>
-        <HookCounter initialvalue={0}/>
-        <HookLogin/>
-        
+        <Counter/>
       </div>
     );
   }
