@@ -1,10 +1,18 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
 export function HookCounter({initialvalue = 0}){
     const [counter,SetCounter] = useState(initialvalue)
 
     function HandlerCounterIncrement(){
         SetCounter((c)=> c + 1)
+    }
+
+    useEffect(()=>{
+        onCounterChange(counter)
+    },[counter])
+
+    const onCounterChange = (value)=> {
+        console.log(`counter change ${value}`)
     }
 
     function HandlerCounterReset(){
