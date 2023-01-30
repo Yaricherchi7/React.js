@@ -1,7 +1,8 @@
 import React from "react";
-import { Counter } from "./Counter";
+
 import { Welcome } from "./Welcome";
-import { GithubUserList } from "./GithubUserList";
+
+import { HookCounter } from "./HookCounter";
 
 export class App extends React.Component {
 
@@ -9,7 +10,7 @@ export class App extends React.Component {
     return (
       <div className="bg-slate-200 p-10"  >
         <Welcome name="Yari"/>
-        <GithubUserList/>
+        <HookCounter/>
       </div>
     );
   }
