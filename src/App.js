@@ -1,8 +1,6 @@
 import React from "react";
-
 import { Welcome } from "./Welcome";
-
-import { HookCounter } from "./HookCounter";
+import { HookLogin } from "./HookLogin";
 
 export class App extends React.Component {
 
@@ -10,7 +8,7 @@ export class App extends React.Component {
     return (
       <div className="bg-slate-200 p-10"  >
         <Welcome name="Yari"/>
-        <HookCounter/>
+        <HookLogin/>
       </div>
     );
   }
