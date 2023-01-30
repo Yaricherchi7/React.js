@@ -1,16 +1,15 @@
 import React from "react";
 import { Counter } from "./Counter";
 import { Welcome } from "./Welcome";
-import { GithubUsers } from "./GithubUsers";
+import { GithubUserList } from "./GithubUserList";
 
 export class App extends React.Component {
 
   render() {
     return (
-      <div >
+      <div className="bg-slate-200 p-10"  >
         <Welcome name="Yari"/>
-        <Counter/>
-        <GithubUsers username="yaricherchi7"/>
+        <GithubUserList/>
       </div>
     );
   }
