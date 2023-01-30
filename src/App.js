@@ -1,6 +1,7 @@
 import React from "react";
 import { Welcome } from "./Welcome";
 import { HookLogin } from "./HookLogin";
+import { GithubUsers } from "./GithubUsers";
 
 export class App extends React.Component {
 
@@ -8,7 +9,7 @@ export class App extends React.Component {
     return (
       <div className="bg-slate-200 p-10"  >
         <Welcome name="Yari"/>
-        <HookLogin/>
+        <GithubUsers username="Yaricherchi7"/>
       </div>
     );
   }
