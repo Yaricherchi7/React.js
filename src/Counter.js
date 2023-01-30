@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-export default function Counter({
+export function Counter({
   initialValue = 0,
   increment = 1,
   interval = 1000,

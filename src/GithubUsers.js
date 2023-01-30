@@ -27,6 +27,7 @@ export function GithubUser({username}){
         fetchGithubUser(username)
     },[username])
 
+
     return (
         <div> 
             {loading && <h1>loading...</h1>}
