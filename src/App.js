@@ -1,5 +1,6 @@
 import React from "react";
 import { Counter } from "./Counter";
+import { GithubUsers } from "./GithubUsers";
 import { Welcome } from "./Welcome";
 
 export class App extends React.Component {
@@ -9,6 +10,7 @@ export class App extends React.Component {
       <div >
         <Welcome name="Yari"/>
         <Counter/>
+        <GithubUsers username="yaricherchi7"/>
       </div>
     );
   }
