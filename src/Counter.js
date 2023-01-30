@@ -16,6 +16,7 @@ export function Counter({
     }, interval);
     return clearInterval(updateCounter);
   };
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(updateCounter, []);
 
   return (
