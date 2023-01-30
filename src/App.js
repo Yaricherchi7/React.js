@@ -2,6 +2,7 @@ import React from "react";
 import { Welcome } from "./Welcome";
 import { HookLogin } from "./HookLogin";
 import { GithubUsers } from "./GithubUsers";
+import { HookCounter } from "./HookCounter";
 
 export class App extends React.Component {
 
@@ -9,7 +10,7 @@ export class App extends React.Component {
     return (
       <div className="bg-slate-200 p-10"  >
         <Welcome name="Yari"/>
-        <GithubUsers username="Yaricherchi7"/>
+        <HookCounter/>
       </div>
     );
   }
