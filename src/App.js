@@ -1,22 +1,24 @@
-import React from "react";
-import { Welcome } from "./Welcome";
-import { HookLogin } from "./HookLogin";
-import { GithubUsers } from "./GithubUsers";
-import { HookCounter } from "./HookCounter";
-import { CarDetail } from "./CarDetails";
+import React, { useState } from "react";
+import { DisplayLanguage } from "./DisplayLanguage";
+import { LanguageContext } from "./LanguageContext";
 
-export class App extends React.Component {
+export function App() {
 
-  render() {
+  const[language, setLanguage] = useState("en")
+
+  function HandleChangeLanguage(event){
+    setLanguage(event.target.value)
+  }
+
     return (
-      <div className="bg-slate-200 p-10"  >
-        <Welcome name="Yari"/>
-        <CarDetail 
-        model="Yaris"
-        year= "1995"
-        color ="giallo"
-        />
+      <div>
+        <select value={language} onChange={HandleChangeLanguage}>
+        <option value="en">EN</option>
+        <option value="it">IT</option>
+        </select>
+        <LanguageContext.Provider value={language}>
+        <DisplayLanguage/>
+        </LanguageContext.Provider>
       </div>
     );
-  }
 }
