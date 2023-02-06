@@ -16,7 +16,7 @@ export function App() {
                 <Link className="m-2 p-2 border-2 border-black " to='/users/Yaricherchi7'>Github Profile</Link>
           </div>
           <Routes>
-             <Route path="/" element={<Welcome/>}/>
+             <Route path="/"element={<Welcome/>}/>
              <Route path="/counter" element={<HookCounter/>}/>
              <Route path="users/:username" element={<ShowGithubUser/>}/>
           </Routes>
