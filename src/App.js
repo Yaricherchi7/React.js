@@ -19,6 +19,13 @@ export function App() {
              <Route path="/" element={<Welcome/>}/>
              <Route path="/counter" element={<HookCounter/>}/>
              <Route path="users/:username" element={<ShowGithubUser/>}/>
+             <Route path="*" element={
+              <div>
+                <h2>ERROR 404</h2>
+                <h3>Page not found</h3>
+                <button className="m-1 p-1 border-2 border-black"><Link to="/">Return to Homepage</Link></button>
+              </div>
+             }/>
           </Routes>
         </div> 
     );
