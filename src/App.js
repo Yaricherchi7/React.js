@@ -3,6 +3,8 @@ import {Welcome} from "./Welcome"
 import { HookCounter } from "./HookCounter";
 import { ShowGithubUser } from "./ShowGithubUser";
 import { Link } from "react-router-dom";
+import { GithubUserList } from "./GithubUserList";
+import { GithubUsers } from "./GithubUsers";
 
 
 
@@ -19,6 +21,10 @@ export function App() {
              <Route path="/" element={<Welcome/>}/>
              <Route path="/counter" element={<HookCounter/>}/>
              <Route path="users/:username" element={<ShowGithubUser/>}/>
+             <Route path="/user" element={<GithubUserList/>}>
+              <Route index element={<p>Enter Username</p>}/>
+              <Route path=":username" element={<GithubUsers/>}/>
+             </Route>
              <Route path="*" element={
               <div>
                 <h2>ERROR 404</h2>

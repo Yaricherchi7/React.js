@@ -18,7 +18,7 @@ import { GithubUsers } from "./GithubUsers";
 
     return(
         <div>
-            <input value={value} onChange={HandleChangeInput}/>
+            <input className="bg-slate-100" value={value} onChange={HandleChangeInput}/>
             <button onClick={HandleAddUser}>show Profile</button>
             
             <div>
