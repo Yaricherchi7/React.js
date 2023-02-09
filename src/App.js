@@ -15,15 +15,15 @@ export function App() {
           <div className="flex justify-center gap-2">
                 <Link className="m-2 p-2 border-2 border-black " to='/'>Welcome</Link>
                 <Link className=" m-2 p-2 border-2 border-black " to='/counter'>Counter</Link >
-                <Link className="m-2 p-2 border-2 border-black " to='/users/Yaricherchi7'>Github Profile</Link>
+                <Link className="m-2 p-2 border-2 border-black " to='/users/'>Github Profile</Link>
           </div>
           <Routes>
              <Route path="/" element={<Welcome/>}/>
              <Route path="/counter" element={<HookCounter/>}/>
-             <Route path="users/:username" element={<ShowGithubUser/>}/>
-             <Route path="/user" element={<GithubUserList/>}>
-              <Route index element={<p>Enter Username</p>}/>
+             <Route path="/:username" element={< ShowGithubUser />}/>
+             <Route path="/users" element={<GithubUserList/>}>
               <Route path=":username" element={<GithubUsers/>}/>
+              <Route index element={<p>Add a user and select it</p>}/>
              </Route>
              <Route path="*" element={
               <div>
