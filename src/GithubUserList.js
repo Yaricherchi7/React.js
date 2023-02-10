@@ -2,7 +2,7 @@
 import { GithubUsers } from "./GithubUsers";
 import { Link, Outlet } from "react-router-dom";
 
- export function GithubUserList(){
+ export default function GithubUserList(){
     const [user, setUser] = useState([])
     const [value, setValue] = useState("")
 
