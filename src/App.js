@@ -8,7 +8,7 @@ import { GithubUsers } from "./GithubUsers";
 export function App() {
     return (
         <div>
-       <GithubUsers username="Yarsssicherchi7"/>
+       <GithubUsers username="Yaricherchi7"/>
         </div> 
     );
 }
